@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<metalib tagsetversion="1" name="Log" version="2">
+<macrosgroup name="ADDORREDUCE">
+    <macro name="ADD" value="0" desc="加"/>
+    <macro name="REDUCE" value="1" desc="减"/>
+</macrosgroup>
+<macrosgroup name="REASON">
+<macro name="SYSTEM" value="0" desc="系统产出或消耗"/>
+<macro name="SHOP" value="1" desc="商店交易"/>
+<macro name="RECHARGE" value="2" desc="充值"/>
+</macrosgroup>
+
+<struct name="ItemFlow" version="1" desc="(可选)道具流水表">
+    <entry name="GameSvrId" type="string" size="25" index = "1" desc="(必填)登录的游戏服务器编号"/>
+    <entry name="dtEventTime" type="datetime" index = "2" desc="(必填)游戏事件的时间, 格式 YYYY-MM-DD HH:MM:SS"/>
+    <entry name="Sequence" type="int" index = "0" desc="(可选)用于关联一次动作产生多条不同类型的道具流动日志"/>
+    <entry name="vGameAppid" type="string" index = "0" size="32" desc="(必填)游戏APPID"/>
+    <entry name="PlatID" type="int" defaultvalue="0" index = "0" desc="(必填)ios 0/android 1"/>
+    <entry name="vopenid" type="string" index = "3" size="64" desc="(必填)玩家"/>
+    <entry name="iGoodsType" type="int" index = "0" desc="(必填)道具类型"/>
+    <entry name="iGoodsId" type="int" index = "0" desc="(必填)道具ID"/>
+    <entry name="AfterCount" type="int" index = "0" desc="(必填)动作后的物品存量"/>
+    <entry name="Count" type="int" index = "0" desc="(必填)动作涉及的物品数量"/>
+    <entry name="Reason" type="int" index = "4" desc="(必填)道具流动一级原因"/>
+    <entry name="SubReason" type="int" index = "0" desc="(必填)道具流动二级原因"/>
+    <entry name="AddOrReduce" type="int" index = "0" desc="(必填)增加 0/减少 1"/>
+    <entry name="Level" type="int" index = "0" desc="(必填)玩家等级"/>
+</struct>
+
+<struct name="assets" version="1" desc="当前财产">
+    <entry name="roleID" type="int" index = '1' size="25" desc="玩家ID"/>
+    <entry name="tempID" type="int" index = "0" desc="财产ID"/>
+    <entry name="num" type="string" index = "0" size="32" desc="财产数量"/>
+</struct>
+<struct name="role" version="1" desc="玩家信息">
+    <entry name="roleID" type="int" index = '1' size="25" desc="玩家ID"/>
+    <entry name="accountID" type="int" index = "0" desc="账户ID"/>
+    <entry name="name" type="string" index = "0" size="32" desc="角色名"/>
+    <entry name="tempID" type="int" index = '0' size="25" desc="职业ID"/>
+    <entry name="expLevel" type="int" index = "0" desc="等级"/>
+    <entry name="exp" type="int" index = "0" size="32" desc="经验"/>
+    <entry name="zhanli" type="int" index = '0' size="25" desc="战力"/>
+    <entry name="lifeNum" type="int" index = "0" desc="生命"/>
+    <entry name="loginTime" type="datetime" index = "0" desc="登录时间"/>
+    <entry name="vipPoint" type="int" index = "0" size="32" desc="vip点"/>
+    <entry name="LoginPrize" type="string" index = '0' size="25" desc="登陆奖励"/>
+    <entry name="vipLevel" type="int" index = "0" desc="vip等级"/>
+    <entry name="unionID" type="int" index = "0" size="32" desc="公会ID"/>
+    <entry name="unionName" type="string" index = '0' size="25" desc="公会名称"/>
+    <entry name="Story" type="int" index = "0" desc="Story"/>
+    <entry name="accountType" type="int" index = "0" size="32" desc="账户类型"/>
+    <entry name="isBind" type="int" index = '0' size="25" desc="是否绑定"/>
+    <entry name="createTime" type="datetime" index = "0" desc="创建时间"/>
+    <entry name="activeEnhanceSuitID" type="int" index = "0" size="32" desc="强化时装ID"/>
+    <entry name="activeInsetSuitID" type="int" index = '0' size="25" desc="镶嵌时装ID"/>
+    <entry name="refreshTime" type="datetime" index = "0" desc="刷新时间"/>
+    <entry name="activeFashionWeaponID" type="int" index = "0" size="32" desc="装备ID"/>
+    <entry name="activeFashionEquipID" type="int" index = "0" size="32" desc="武器ID"/>
+    <entry name="isNobility" type="int" index = '0' size="25" desc="玩家ID"/>
+    <entry name="isQQMember" type="int" index = "0" desc="是否是qq会员"/>
+    <entry name="titleID" type="int" index = "0" size="32" desc="称号ID"/>
+    <entry name="picture" type="string" index = "0" size="32" desc="图像"/>
+    <entry name="nickName" type="string" index = '0' size="25" desc="昵称"/>
+    <entry name="openID" type="string" index = "0" desc="openID"/>
+    <entry name="serverUid" type="int" index = "0" size="32" desc="服务器Id"/>
+</struct>
+    
+</metalib>
